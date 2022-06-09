@@ -1,0 +1,220 @@
+/*HEADER*/
+.header {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 5.2rem;
+}
+.header-logo_images {
+    padding: 0 1rem;
+}
+
+.logo, .zsu {
+    height: 5rem;
+    width: 5rem;
+    position: relative;
+    margin: 0 1rem;
+    z-index: 5;
+}
+
+.tabbed {
+    padding: 5px;
+    background: #FF5D5D;
+    border-radius: 5px;
+}
+
+/*HAMBURGER MENU*/
+.header-menu {
+    margin: 0 2rem;
+}
+
+.menu-link {
+    position: relative;
+    margin: 0 0 0 1.25rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+.menu-sub_list {
+    position: absolute;
+    top: 70%;
+    background: #000000;
+    padding: 1rem;
+    min-width: 200px;
+}
+.menu-sub_link {
+    color: #ffffff;
+}
+.menu-sub_link:hover {
+    color: rgb(255, 234, 147);
+}
+.menu-sub_list li{
+    margin: 0 0 10px 0;
+}
+.menu-sub_list li:last-child{
+    margin: 0;
+}
+.menu-arrow {
+    display: none;
+}
+
+body._pc .menu-list > li:hover .menu-sub_list {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    pointer-events: all;
+}
+body._touch .menu-list > li {
+    display: flex;
+    align-items: center;
+}
+body._touch .menu-link {
+    flex: 1 1 auto;
+}
+body._touch .menu-arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 1px 0 0 5px;
+    transition: transform 0.3s ease 0s;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #ffffff;
+}
+body._touch .menu-list > li._active .menu-sub_list {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    pointer-events: all;
+}
+body._touch .menu-list > li._active .menu-arrow {
+    transform: rotate(180deg);
+}
+body._lock {
+    overflow: hidden;
+}
+/*HAMBURGER MENU*/
+
+/*MEDIA MOBILE-FIRST*/
+@media (min-width: 767px) {
+    .menu-list {
+        display: flex;
+        align-items: center;
+    }
+    .menu-list > li {
+        padding: 10px 0;
+    }
+    .menu-sub_list {
+        transform: translate(0px, 10%);
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease 0s;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-icon {
+        z-index: 5;
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .menu-icon span,
+    .menu-icon::before,
+    .menu-icon::after {
+        left: 0;
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background: #fff;
+    }
+    .menu-icon::before,
+    .menu-icon::after {
+        content: "";
+    }
+    .menu-icon:before {
+        top: 0;
+    }
+    .menu-icon:after {
+        bottom: 0;
+    }
+    .menu-icon span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+    .menu-icon._active span{
+        transform: scale(0) translate(0px, -50%);
+    }
+    .menu-icon._active::before{
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+    }
+    .menu-icon._active::after{
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+    }
+    
+    .menu-body {
+        position: fixed;
+        overflow: auto;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(92, 111, 67, 0.9);
+        padding: 100px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+    }
+    .menu-body::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 5.2rem;
+        background: rgb(0, 0, 0);
+        z-index: 2;
+    }
+    .menu-body._active {
+        left: 0;
+    }
+    
+    .menu-list > li {
+        flex-wrap: wrap;
+        margin: 0 0 30px 0;
+    }
+    .menu-list > li._active .menu-sub_list{
+        display: block;
+    }
+    .menu-list > li:last-child {
+        margin-bottom: 0;
+    }
+    .menu-link {
+        font-size: 24px;
+    }
+    .menu-sub_list {
+        flex: 1 1 100%;
+        margin: 20px 0 0 0;
+        position: relative;
+        background: rgba(67, 90, 111, 0.8);
+        display: none;
+    }
+    .menu-sub_link {
+        font-size: 20px;
+    }
+}
+
+/*MEDIA MOBILE-FIRST*/

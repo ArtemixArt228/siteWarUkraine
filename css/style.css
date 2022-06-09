@@ -1,0 +1,150 @@
+@import "nullstyle.css";
+@import "header.css";
+@import "fotter.css";
+
+
+.title-section {
+    text-align: center;
+    font-size: 3.5rem;
+}
+.timer-container {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    font-family: "NeueTitle";
+}
+.days-c, .hours-c, .min-c, .sec-c {
+    text-align: center;
+    flex: 0 0 25%;
+}
+.big-text {
+    font-size: 15rem;
+}
+.timer-container span {
+    font-size: 3rem;
+    letter-spacing: 10px;
+    padding: 0 0 0 10px;
+}
+    
+/*MAIN-FLEX*/
+.main-flex {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+.news, .video {
+    margin: 20px;
+}
+.video_heading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+}
+.video {
+    margin: 0 auto;
+}
+.item-body {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+.item-video {
+    position: relative;
+    padding: 0 0 52% 0;
+}
+.item-video iframe {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.video-cont iframe {
+    width: 500px;
+}
+/*MAIN-FLEX*/
+
+/*MYSELF*/
+.myself {
+    margin: 2rem 0 0 0;
+}
+.about_me {
+    text-align: center;
+    font-size: 3.5rem;
+}
+.myself-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
+.introduce {
+    font-size: 2rem;
+    margin: 0.5rem 0 1rem 0;
+}
+.myself-text {
+    font-size: 1.2rem;
+    padding: 5px 0;
+}
+.cont-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: grid;
+    place-items: center;
+    margin: 0 0 0 20px;
+}
+.cont-img img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 220px;
+    height: 220px;
+}
+/*MYSELF*/
+
+/*MOBILE WEB*/
+@media (max-width: 1024px) {
+    .main-flex {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px) {
+    .timer-container {
+        height: auto;
+        display: grid;
+        grid-template-areas: "days hours"
+                             "min sec";
+        margin: 1rem 0;
+    }
+    .days-c {
+        grid-area: days;
+    }
+    .hours-c {
+        grid-area: hours;
+    }
+    .min-c {
+        grid-area: min;
+    }
+    .sec-c {
+        grid-area: sec;
+    }
+}
+
+@media (max-width: 576px) {
+    .myself-row {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .main-flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .cont-img {
+        margin: 15px 0 10px 0;
+    }
+}
+/*MOBILE WEB*/

@@ -1,0 +1,76 @@
+/* FOOTER */
+.fotter {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+.fotter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.heading {
+    font-size: 24px;
+    cursor: default;
+    color: #54b3d6;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.heading::before {
+    content: "";
+    background: #FFFD7F;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.heading:hover::before {
+    width: 100%;
+}
+
+.fotter-down {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.fotter-links a {
+    color: #ffffff;
+    font-size: 2rem;
+}
+.fotter-links a:hover {
+    color: #FF9E7F;
+    transition: color 0.5s ease 0s;
+}
+
+.fotter-copy {
+    color: #cac531;
+}
+/* FOOTER*/
+
+@media(max-width: 550px) {
+    .link {
+        display: none;
+    }
+}
+
+@media(max-width: 425px) {
+    .heading, .fotter-copy {
+        margin-bottom: 0.2rem;
+    }
+    .fotter-down {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

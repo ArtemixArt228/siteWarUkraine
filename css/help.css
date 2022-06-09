@@ -1,0 +1,167 @@
+@import "nullstyle.css";
+@import "header.css";
+@import "fotter.css";
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.fullscreen {
+    min-height: 90vh;
+    display: flex;
+}
+.fullscreen_body {
+    flex: 1 1 auto;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+.fullscreen_title {
+    font-size: 50px;
+    margin: 0 0 1.2rem 0;
+}
+.fullscreen_text {
+    font-size: 25px;
+    margin: 0 0 1.2rem 0;
+}
+.fullscreen_link {
+    display: inline-block;
+    line-height: 50px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    align-self: center;
+    background: #E74C3C;
+    border-radius: 2px;
+    padding: 0 10px;
+}
+
+.fullscreen_bg {
+    min-height: 100vh;
+    background: url(../pictures/help/ukrain.jpg) center / cover no-repeat fixed;
+}
+
+.block {
+    margin: 1.5rem 0;
+    padding: 0 20px;
+}
+.title {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.flex_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.financial_block-text {
+    padding: 0 100px 20px 0;
+}
+.financial_link {
+    display: inline-block;
+    line-height: 50px;
+    padding: 0 10px;
+    border-radius: 5px;
+    background: #5DADE2;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.flex_block img {
+    width: 30%;
+}
+
+.volunteer_block-text {
+    padding: 0 0 20px 100px;
+}
+.text-block {
+    padding: 0 0 20px 0;
+}
+
+.other_grid {
+    margin: 1rem 0;
+    display: grid;
+    grid-template: 1fr 1fr/ auto auto auto;
+    grid-row-gap: 50px;
+    grid-column-gap: 10px;
+}
+
+.other_item {
+    display: flex;
+    padding: 0 10px;
+}
+.svg_item {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: #F4D03F;
+    border-radius: 50%;
+    margin: 0 5px 0 0;
+}
+.svg_item img{
+    width: 65px;
+    height: 65px;
+}
+
+.other_info {
+    flex: 0 0 70%;
+    margin: 0 0 0 5px;
+}
+
+.heading_other {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+@media (max-width: 1024px) {
+    .other_grid {
+        grid-template: 1fr 1fr 1fr/ auto auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .other_grid {
+        grid-template: repeat(6, 1fr)/ auto;
+    }
+    .flex_block {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex_block img {
+        width: 100%;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .financial_block-text,
+    .volunteer_block-text {
+        padding: 10px 0;
+        text-align: center;
+        line-height: 20px;
+    }
+    .text_block {
+        text-align: center;
+    }
+    .financial_block {
+        flex-direction: column-reverse;
+    }
+}
+@media (max-width: 365px) {
+    .other_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+    }
+}
